@@ -1,0 +1,21 @@
+[project]
+name = "warden"
+requires-python = ">= 3.9"
+version = "1.0"
+
+dependencies = [
+  "plotly",
+  "plotly_express",
+  "dash",
+  "dash-bootstrap-components",
+  "dash-mantine-components",
+  "dash_extensions",
+  "pandas",
+  "pyyaml",
+  "flask-caching",
+  "pyOpenSSL"
+]
+
+[project.scripts]
+warden_run_dashboard = "warden.warden:main"
+warden_init_or_update = "warden.updateData:main"

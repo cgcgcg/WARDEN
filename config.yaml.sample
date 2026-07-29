@@ -1,0 +1,31 @@
+# This is an example configuration for WARDEN.
+# Copy it to config.yaml and make changes.
+
+code:
+  # The name of the project
+  name: Trilinos
+  # The github url used for displaying diffs 
+  url: https://github.com/trilinos/Trilinos
+
+# Repositories with performance data
+repositories:
+  - name: olcf
+    # The URL can be left empty. In this case, the data repository needs to be cloned by hand.
+    # This allows to avoid URLs with access tokens in the config file.
+    url: git@github.com:ORG/REPO.git
+    datasets:
+      - name: Frontier      # name for the data repo
+        path: FrontierData  # relative path for a folder with performance data in it
+
+# annotations
+annotations:
+  # filename for csv data
+  filename: MachineWideAnnotations.csv
+
+# Website serving parameters
+server:
+  # hostname to bind to
+  host: localhost
+  # port to bind to
+  port: 8005
+

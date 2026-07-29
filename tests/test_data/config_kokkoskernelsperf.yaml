@@ -1,0 +1,70 @@
+# This is an example configuration for WARDEN.
+# Copy it to config.yaml and make changes.
+
+code:
+  # The name of the project
+  name: Trilinos
+  # The github url used for displaying diffs 
+  url: https://github.com/trilinos/Trilinos
+
+# Repositories with performance data
+repositories:
+  - name: olcf
+    url: git@github.com:ORG/REPO.git
+    datasets:
+      - name: Frontier      # name for the data repo
+        path: FrontierData  # relative path for a folder with performance data in it
+    # Google benchmark groupings
+    benchmark_files:
+      - filename: KokkosKernels_Blas2_gemv_Benchmark
+        benchmarks:
+          - name: GEMV
+            glob: KokkosBlas2_GEMV*
+      - filename: KokkosKernels_Blas2_ger_Benchmark
+        benchmarks:
+          - name: GER
+            glob: KokkosBlas2_GER*
+      - filename: KokkosKernels_Blas3_gemm_benchmark
+        benchmarks:
+          - name: GEMM
+            glob: KokkosBlas3_GEMM*
+      - filename: KokkosKernels_PerformanceTest_Benchmark
+        benchmarks:
+          - name: Dot
+            glob: KokkosBlas_dot/*
+          - name: DotMV
+            glob: KokkosBlas_dot_mv*
+          - name: TeamDot
+            glob: KokkosBlas_team_dot*
+      - filename: KokkosKernels_lapack_svd
+        benchmarks:
+          - name: KokkosLapack_SVD
+      - filename: KokkosKernels_sparse_spmv_benchmark
+        benchmarks:
+          - name: spmv
+            glob: KokkosSparse_spmv/*
+      - filename: KokkosKernels_ode_runge_kutta
+        benchmarks:
+          - name: ODERungeKutta
+            glob: KokkosODE_chem_models*
+      - filename: KokkosKernels_ode_bdf_solver
+        benchmarks:
+          - name: ODEBDF
+            glob: KokkosODE_BDF_Stiff_Chem*
+
+
+# annotations
+annotations:
+  # git repo with annotations
+  url: git@github.com:ORG/REPO.git
+  # Where the repo should be checked out
+  path: annotations
+  # filename for csv data
+  filename: MachineWideAnnotations.csv
+
+# Website serving parameters
+server:
+  # hostname to bind to
+  host: localhost
+  # port to bind to
+  port: 8005

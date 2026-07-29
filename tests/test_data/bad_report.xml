@@ -1,0 +1,11 @@
+<performance-report date="2025-08-14T14:18:05" name="nightly_run_2025_08_14" time-units="seconds">
+  <metadata key="Trilinos Version" value="e43552c548" />
+<timing name="Main timer" percent="100.0" value="20">
+  <timing name="Generate matrix" percent="14" value="2.8" />
+  <timing name="Operation Op*x" percent="1" value="0.2" />
+  <timing name="Total Solve Time" percent="75" value="15">
+    <timing name="Operation Op*x" percent="50" value="7.5" />
+    <timing name="Remainder" percent="50" value="7.5" />
+  <timing name="Remainder" percent="10" value="2" />
+</timing>
+</performance-report>
